@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = API_KEY_WEATHER
+API_KEY = {OPEN_WEATHER_API_KEY}  # Get an API key from openweathermap.org
 
 
 def get_data(place, days):
@@ -14,5 +14,5 @@ def get_data(place, days):
 
 
 if __name__ == "__main__":
-    print(os.environ.get("API_KEY_WEATHER"))
+    print(get_data(place="Paris", days=3))
 

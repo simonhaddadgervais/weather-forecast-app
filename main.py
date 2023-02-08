@@ -26,6 +26,6 @@ if place:
             images = {"Clear":"images/clear.png", "Clouds":"images/cloud.png", "Rain":"images/rain.png", "Snow":"images/snow.png"}
             print_images = [images[condition] for condition in sky]
             st.image(print_images, width=100)
-    # If user enter the wrong name:
+    # If user enter a wrong name:
     except KeyError:
         st.write("This place does not exist. Please enter correct city name.")

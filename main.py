@@ -16,12 +16,14 @@ if place:
         filtered_data = get_data(place, days)
         # Creates plot
         if option == "Temperature":
+            # Get the temperatures from the dictionary 'temp' in the dictionary 'main'
             temperatures = [dict["main"]["temp"] for dict in filtered_data]
             dates = [dict["dt_txt"] for dict in filtered_data]
             figure = px.line(x=dates, y=temperatures, labels={"x": "Date", "y": "Temperature (C)"})
             st.plotly_chart(figure)
 
         if option == "Sky":
+            # Gets the sky info from the dictionary 'main' in the first item of the list 'weather'
             sky = [dict["weather"][0]["main"] for dict in filtered_data]
             images = {"Clear":"images/clear.png", "Clouds":"images/cloud.png", "Rain":"images/rain.png", "Snow":"images/snow.png"}
             print_images = [images[condition] for condition in sky]
